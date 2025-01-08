@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        shared-configs:
+          - iot-application-mysql.${spring.cloud.nacos.config.file-extension}

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.iot.common.log.aspect.LogsAspect,\
+  com.iot.common.log.factory.DefaultLogFactory

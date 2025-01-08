@@ -1,0 +1,5 @@
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#  com.iot.common.rabbitmq.config.RabbitConfig,\
+#  com.iot.common.rabbitmq.config.ExchangeConfig
+#org.springframework.boot.env.EnvironmentPostProcessor=\
+#  com.iot.common.rabbitmq.config.RabbitmqEnvironmentConfig

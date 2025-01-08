@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.iot.common.mysql.config.MybatisPlusConfig,\
+com.iot.common.mysql.handler.MataObjectHandle,\
+com.iot.common.mysql.interceptor.QueryFilterInterceptor

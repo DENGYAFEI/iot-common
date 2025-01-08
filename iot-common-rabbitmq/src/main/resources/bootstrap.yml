@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        shared-configs:
+          - iot-application-rabbitmq.${spring.cloud.nacos.config.file-extension}
