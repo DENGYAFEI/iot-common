@@ -5,13 +5,18 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+/**
+ * 获取Spring中Bean工具类
+ *
+ * @author 星空流年
+ * @date 2023/7/5
+ */
 @Component
 @SuppressWarnings("all")
-public class SpringContextUtils implements ApplicationContextAware {
-
+public class SpringContextUtils {
     private static ApplicationContext applicationContext;
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+
+    public static void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         SpringContextUtils.applicationContext = applicationContext;
     }
 
@@ -19,12 +24,12 @@ public class SpringContextUtils implements ApplicationContextAware {
         return applicationContext.getBean(name);
     }
 
-    public static <T> T getBean(Class<T> clazz) {
-        return applicationContext.getBean(clazz);
+    public static <T> T getBean(Class<T> requiredType) {
+        return applicationContext.getBean(requiredType);
     }
 
-    public static <T> T getBean(String name, Class<T> clazz) {
-        return applicationContext.getBean(name, clazz);
+    public static <T> T getBean(String name, Class<T> requiredType) {
+        return applicationContext.getBean(name, requiredType);
     }
 
     public static boolean containsBean(String name) {

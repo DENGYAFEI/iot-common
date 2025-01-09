@@ -32,16 +32,14 @@ import java.io.File;
 @Slf4j
 @Configuration
 @MapperScan( { "com.iot.*.mapper" } )
-public class MybatisPlusConfig implements InitializingBean {
+public class MybatisPlusConfig implements InitializingBean{
 
     @Resource
     private QueryFilterInterceptor queryFilterInterceptor;
 
-//    @Resource
-//    private PermissionInterceptor permissionInterceptor;
 
     @Bean
-    public IdentifierGenerator identifierGenerator(){
+    public IdentifierGenerator identifierGenerator() {
         return entity -> IdUtil.getSnowflakeNextId();
     }
 
@@ -49,10 +47,10 @@ public class MybatisPlusConfig implements InitializingBean {
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
         //  通用查询过滤插件
-        interceptor.addInnerInterceptor( queryFilterInterceptor );
+        interceptor.addInnerInterceptor(queryFilterInterceptor);
 //        interceptor.addInnerInterceptor( permissionInterceptor );
         //  分页插件
-        interceptor.addInnerInterceptor( new PaginationInnerInterceptor( DbType.MYSQL ) );
+        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
         return interceptor;
     }
 
@@ -82,5 +80,4 @@ public class MybatisPlusConfig implements InitializingBean {
             }
         }
     }
-
 }

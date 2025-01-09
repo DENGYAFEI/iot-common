@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 import lombok.Data;
 
@@ -24,56 +25,67 @@ public class GatherJob implements Serializable {
     /**
      * bean名称
      */
-    private String bean_name;
+    @TableField(value = "bean_name")
+    private String beanName;
 
     /**
      * 方法名称
      */
-    private String method_name;
+    @TableField(value = "method_name")
+    private String methodName;
 
     /**
      * 方法参数
      */
-    private String method_params;
+    @TableField(value = "method_params")
+    private String methodParams;
 
     /**
      * cron表达式
      */
-    private String cron_expression;
+    @TableField(value = "cron_expression")
+    private String cronExpression;
 
     /**
      * 备注
      */
+    @TableField(value = "remark")
     private String remark;
 
     /**
      * 创建时间
      */
-    private Date create_time;
+    @TableField(value = "create_time")
+    private LocalDateTime createTime;
 
     /**
      * 创建者
      */
+    @TableField(value = "creator")
     private String creator;
 
     /**
      * 最近操作时间
      */
-    private Date last_update_time;
+    @TableField(value = "last_update_time")
+    private LocalDateTime lastUpdateTime;
 
     /**
      * 最近操作者
      */
-    private String last_operator;
+    @TableField(value = "last_operator")
+    private String lastOperator;
 
     /**
      * 版本号
      */
+    @TableField(value = "version")
     private Long version;
 
     /**
      * 状态
      */
+    @TableField(value = "status")
     private Integer status;
 
     @TableField(exist = false)

@@ -1,4 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.iot.common.thread.config.ThreadPoolConfig
+  com.iot.common.thread.config.ThreadPoolConfig,\
+  com.iot.common.thread.config.ScheduleConfig
 org.springframework.boot.env.EnvironmentPostProcessor=\
   com.iot.common.thread.config.ActiveThreadProfileConfig
